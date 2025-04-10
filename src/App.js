@@ -12,9 +12,8 @@ function App() {
         
         <div class="names-container">
           <p className='names'>Kutullo Letageng</p>
-          
-
         </div>
+        
         <a
           className="App-link"
           href="https://reactjs.org"
