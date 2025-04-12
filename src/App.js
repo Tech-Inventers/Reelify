@@ -13,7 +13,7 @@ function App() {
         <div class="names-container">
           <p className='names'>Kutullo Letageng</p>
           <p className='names'>Sharleen </p>
-          <p className='names'>Mnelisi Mpontshane </p>
+          <p className='names'>Mnelisi Mpontshane React </p>
         </div>
         
         <a
