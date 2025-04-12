@@ -12,6 +12,7 @@ function App() {
         
         <div class="names-container">
           <p className='names'>Kutullo Letageng</p>
+          <p className='names'>Sharleen </p>
         </div>
         
         <a
