@@ -14,6 +14,7 @@ function App() {
           <p className='names'>Kutullo Letageng</p>
           <p className='names'>Sharleen </p>
           <p className='names'>Mnelisi Mpontshane React </p>
+          <p className='names'>Somafu Ongako</p>
         </div>
         
         <a
