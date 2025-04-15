@@ -1,33 +1,4 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        
-        <div class="names-container">
-          <p className='names'>Kutullo Letageng</p>
-          <p className='names'>Sharleen </p>
-          <p className='names'>Mnelisi Mpontshane React </p>
-          <p className='names'>Somafu Ongako</p>
-        </div>
-        
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 
-export default App;
