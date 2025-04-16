@@ -169,3 +169,29 @@ function MoviePage({
             {movies.length === 0 && (
               <div className="no-results">No movies found with the selected filters</div>
             )}
+            {/* Pagination */}
+            {movies.length > 0 && (
+              <div className="pagination">
+                <button 
+                  onClick={() => handlePageChange("prev")} 
+                  disabled={currentPage === 1}
+                >
+                  Previous
+                </button>
+                <span>Page {currentPage} of {totalPages}</span>
+                <button 
+                  onClick={() => handlePageChange("next")} 
+                  disabled={currentPage === totalPages}
+                >
+                  Next
+                </button>
+              </div>
+            )}
+          </>
+        )}
+      </section>
+    </div>
+  );
+}
+
+export default MoviePage;
