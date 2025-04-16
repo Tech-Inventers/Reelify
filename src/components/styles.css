@@ -331,3 +331,101 @@ main {
   gap: 2rem;
   margin-bottom: 2rem;
 }
+
+/* Movie Card */
+.movie-card {
+  background-color: #1a1a1a;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.movie-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5);
+}
+
+.movie-poster {
+  position: relative;
+  overflow: hidden;
+}
+
+.movie-poster img {
+  width: 100%;
+  height: 330px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.movie-card:hover .movie-poster img {
+  transform: scale(1.05);
+}
+
+.no-poster {
+  width: 100%;
+  height: 330px;
+  background-color: #2c2c2c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #aaa;
+  font-size: 0.9rem;
+}
+
+.movie-info {
+  padding: 1.2rem;
+  background-color: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+.movie-poster:hover .movie-info {
+  transform: translateY(0);
+}
+
+.movie-info h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.6rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.movie-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.movie-rating {
+  color: #f5c518;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.trailer-btn {
+  background-color: #e50914;
+  color: white;
+  padding: 0.4rem 0.8rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.trailer-btn:hover {
+  background-color: #b2070f;
+  transform: scale(1.05);
+}
