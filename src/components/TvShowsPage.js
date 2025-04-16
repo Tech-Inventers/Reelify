@@ -63,16 +63,37 @@ function TVShowsPage({
           {isLoading ? (
             <div className="loading">Loading TV shows...</div>
           ) : (
-            <div className="shows-grid tv-shows-grid">
-              {shows.map(show => (
-                <MovieCard 
-                  key={show.id} 
-                  movie={show} 
-                  onClick={() => handleShowClick(show)}
-                  onPlayTrailer={() => handleTrailerRequest(show.id)}
-                />
-              ))}
-            </div>
+            <>
+              <div className="shows-grid tv-shows-grid">
+                {shows.map(show => (
+                  <MovieCard 
+                    key={show.id} 
+                    movie={show} 
+                    onClick={() => handleShowClick(show)}
+                    onPlayTrailer={() => handleTrailerRequest(show.id)}
+                  />
+                ))}
+              </div>
+              
+              {/* Pagination controls */}
+              {shows && shows.length > 0 && (
+                <div className="pagination">
+                  <button 
+                    onClick={() => handlePageChange("prev")} 
+                    disabled={currentPage === 1}
+                  >
+                    Previous
+                  </button>
+                  <span>Page {currentPage} of {totalPages}</span>
+                  <button 
+                    onClick={() => handlePageChange("next")} 
+                    disabled={currentPage === totalPages}
+                  >
+                    Next
+                  </button>
+                </div>
+              )}
+            </>
           )}
         </section>
       </div>
