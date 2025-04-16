@@ -11,7 +11,9 @@ function TVShowsPage({
     currentPage, 
     totalPages, 
     handlePageChange, 
-    getViewModeTitle
+    getViewModeTitle,
+    changeCategory,
+    resetFilters
   }) {
     return (
       <div className="tv-shows-page">
@@ -27,16 +29,31 @@ function TVShowsPage({
               <button className={viewMode === "tv_trending" ? "active" : ""} onClick={() => { setViewMode("tv_trending"); }}>
                 Trending
               </button>
-             
             </div>
             {viewMode === "tv_trending" && (
               <div className="time-filter">
                 <button className={timeWindow === "day" ? "active" : ""} onClick={() => setTimeWindow("day")}>
                   Today
                 </button>
-              
               </div>
             )}
+          </div>
+
+          {/* Aadvanced filtering options */}
+          <div className="advanced-filters">
+            <h3>Filter & Sort</h3>
+            <div className="filter-row">
+              <div className="filter-group">
+                <label>Genre</label>
+                <select onChange={(e) => changeCategory(e.target.value)}>
+               
+                </select>
+              </div>
+            
+            </div>
+            <button className="reset-filters" onClick={resetFilters}>
+              Reset Filters
+            </button>
           </div>
         </div>
       </div>
