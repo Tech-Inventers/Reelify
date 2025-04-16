@@ -148,3 +148,24 @@ function MoviePage({
           </button>
         </div>
       </section>
+      <section className="movies-section">
+        <h2>{getViewModeTitle()}</h2>
+        
+        {isLoading ? (
+          <div className="loading">Loading movies...</div>
+        ) : (
+          <>
+            <div className="movies-grid movie-page-grid">
+              {movies.map(movie => (
+                <MovieCard 
+                  key={movie.id} 
+                  movie={movie} 
+                  onClick={() => handleMovieClick(movie)}
+                  onPlayTrailer={() => handleTrailerRequest(movie.id)}
+                />
+              ))}
+            </div>
+            
+            {movies.length === 0 && (
+              <div className="no-results">No movies found with the selected filters</div>
+            )}
