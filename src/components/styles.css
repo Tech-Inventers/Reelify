@@ -52,3 +52,90 @@
     color: #3498db;
     text-shadow: 0 0 10px rgba(52, 152, 219, 0.5);
   }
+  
+.nav-search {
+    width: 40%;
+    min-width: 250px;
+  }
+  
+  .nav-search form {
+    display: flex;
+    background-color: #333;
+    border-radius: 30px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+  }
+  
+  .nav-search form:focus-within {
+    border-color: #3498db;
+    box-shadow: 0 0 10px rgba(52, 152, 219, 0.5);
+  }
+  
+  .nav-search input {
+    flex: 1;
+    padding: 0.6rem 1rem;
+    border: none;
+    background-color: transparent;
+    color: white;
+    outline: none;
+    font-size: 0.95rem;
+  }
+  
+  .nav-search input::placeholder {
+    color: #aaa;
+  }
+  
+  .nav-search button {
+    background-color: transparent;
+    border: none;
+    padding: 0 1rem;
+    color: white;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+  
+  .nav-search button:hover {
+    color: #3498db;
+  }
+  
+  .nav-links {
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  .nav-links a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s;
+    position: relative;
+    padding: 0.5rem 0;
+  }
+  
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #3498db;
+    transition: width 0.3s;
+  }
+  
+  .nav-links a:hover::after {
+    width: 100%;
+  }
+  
+  .nav-links a:hover {
+    color: #3498db;
+  }
+  
+  .nav-links a.active {
+    color: #3498db;
+  }
+  
+  .nav-links a.active::after {
+    width: 100%;
+  }
