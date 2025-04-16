@@ -27,9 +27,13 @@ function MovieDetail({ movie, trailerKey, onClose, onPlayTrailer }) {
             <p className="movie-overview">{movie.overview}</p>
             
             {!trailerKey ? (
-              <button className="play-trailer-btn" onClick={onPlayTrailer}>
+            <div className="button-container">
+            <button className="play-trailer-btn" onClick={onPlayTrailer}>
                 ▶ Watch Trailer
-              </button>
+            </button>
+            <button className="watch-btn">👀 Watch</button>
+            <button className="download-btn">⬇ Download</button>
+            </div>
             ) : (
               <div className="trailer-container">
                 <iframe
