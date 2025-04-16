@@ -248,3 +248,86 @@ main {
   transform: translateY(-2px);
   box-shadow: 0 6px 15px rgba(229, 9, 20, 0.4);
 }
+
+/* Filters */
+.filters {
+  margin-bottom: 2.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.view-modes {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+
+.view-modes button, .time-filter button {
+  background-color: #333;
+  color: white;
+  padding: 0.7rem 1.2rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.view-modes button:hover, .time-filter button:hover {
+  background-color: #555;
+  transform: translateY(-2px);
+}
+
+.view-modes button.active, .time-filter button.active {
+  background-color: #e50914;
+  box-shadow: 0 4px 10px rgba(229, 9, 20, 0.3);
+}
+
+.time-filter {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.categories-filter select {
+  background-color: #333;
+  color: white;
+  padding: 0.7rem 1.2rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  outline: none;
+  font-size: 0.9rem;
+  transition: all 0.3s;
+  min-width: 180px;
+}
+
+.categories-filter select:hover {
+  background-color: #444;
+}
+
+.categories-filter select:focus {
+  box-shadow: 0 0 0 2px #e50914;
+}
+
+/* Movies Section */
+.movies-section {
+  margin-bottom: 4rem;
+}
+
+.movies-section h2 {
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  padding-left: 1rem;
+  border-left: 5px solid #e50914;
+  text-shadow: 0 0 10px rgba(229, 9, 20, 0.3);
+}
+
+.movies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
