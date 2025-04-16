@@ -39,7 +39,7 @@ function TVShowsPage({
             )}
           </div>
 
-          {/* Aadvanced filtering options */}
+          {/* Advanced filtering options */}
           <div className="advanced-filters">
             <h3>Filter & Sort</h3>
             <div className="filter-row">
@@ -56,6 +56,25 @@ function TVShowsPage({
             </button>
           </div>
         </div>
+
+        {/* Shows grid with loading state */}
+        <section className="shows-section">
+          <h2>{getViewModeTitle()}</h2>
+          {isLoading ? (
+            <div className="loading">Loading TV shows...</div>
+          ) : (
+            <div className="shows-grid tv-shows-grid">
+              {shows.map(show => (
+                <MovieCard 
+                  key={show.id} 
+                  movie={show} 
+                  onClick={() => handleShowClick(show)}
+                  onPlayTrailer={() => handleTrailerRequest(show.id)}
+                />
+              ))}
+            </div>
+          )}
+        </section>
       </div>
     );
   }
