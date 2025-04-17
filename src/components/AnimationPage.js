@@ -144,6 +144,51 @@ function AnimationPage({
           </button>
         </div>
       </section>
+
+      {/* Animations Grid */}
+      <section className="movies-section animations-section">
+        <h2>{getViewModeTitle()}</h2>
+        
+        {isLoading ? (
+          <div className="loading">Loading animations...</div>
+        ) : (
+          <>
+            <div className="movies-grid animation-grid">
+              {movies.map(movie => (
+                <MovieCard 
+                  key={movie.id} 
+                  movie={movie} 
+                  onClick={() => handleMovieClick(movie)}
+                  onPlayTrailer={() => handleTrailerRequest(movie.id)}
+                />
+              ))}
+            </div>
+            
+            {movies.length === 0 && (
+              <div className="no-results">No animations found with the selected filters</div>
+            )}
+            
+            {/* Pagination */}
+            {movies.length > 0 && (
+              <div className="pagination">
+                <button 
+                  onClick={() => handlePageChange("prev")} 
+                  disabled={currentPage === 1}
+                >
+                  Previous
+                </button>
+                <span>Page {currentPage} of {totalPages}</span>
+                <button 
+                  onClick={() => handlePageChange("next")} 
+                  disabled={currentPage === totalPages}
+                >
+                  Next
+                </button>
+              </div>
+            )}
+          </>
+        )}
+      </section>
     </div>
   );
 }
