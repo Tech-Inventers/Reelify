@@ -19,8 +19,11 @@ app.use((req, res, next) => {
   next();
 });
 
-
-
+// Health Check (Required by Render)
+app.get('/health', (req, res) => {
+    res.status(200).json({ status: 'ok' });
+  });
+  
 // Helper function to build URL with filters
 const buildTMDBUrl = (baseUrl, req) => {
   const { page = 1, year, region, sort_by, with_genres } = req.query;
