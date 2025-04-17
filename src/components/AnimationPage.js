@@ -79,6 +79,70 @@ function AnimationPage({
             </div>
           )}
         </div>
+
+        <div className="advanced-filters animation-advanced-filters">
+          <h3>Filter & Sort</h3>
+          
+          <div className="filter-row">
+            <div className="filter-group">
+              <label>Animation Genre</label>
+              <select 
+                onChange={(e) => changeAnimationGenre(e.target.value)} 
+                value={viewMode === "animation_genre" ? animationGenres.find(genre => genre.id === parseInt(movies[0]?.genre_ids?.[0]))?.id || "" : ""}
+              >
+                <option value="">All Animation Types</option>
+                {Array.isArray(animationGenres) && animationGenres.map(genre => (
+                  <option key={genre.id} value={genre.id}>{genre.name}</option>
+                ))}
+              </select>
+            </div>
+
+            <div className="filter-group">
+              <label>Year</label>
+              <select 
+                value={filterYear} 
+                onChange={(e) => setFilterYear(e.target.value)}
+              >
+                <option value="">All Years</option>
+                {years.map(year => (
+                  <option key={year} value={year}>{year}</option>
+                ))}
+              </select>
+            </div>
+
+            <div className="filter-group">
+              <label>Country</label>
+              <select 
+                value={filterCountry} 
+                onChange={(e) => setFilterCountry(e.target.value)}
+              >
+                <option value="">All Countries</option>
+                {countries.map(country => (
+                  <option key={country.code} value={country.code}>{country.name}</option>
+                ))}
+              </select>
+            </div>
+
+            <div className="filter-group">
+              <label>Sort By</label>
+              <select 
+                value={sortBy} 
+                onChange={(e) => setSortBy(e.target.value)}
+              >
+                <option value="popularity.desc">Popularity (High to Low)</option>
+                <option value="popularity.asc">Popularity (Low to High)</option>
+                <option value="vote_average.desc">Rating (High to Low)</option>
+                <option value="vote_average.asc">Rating (Low to High)</option>
+                <option value="release_date.desc">Latest First</option>
+                <option value="release_date.asc">Oldest First</option>
+              </select>
+            </div>
+          </div>
+
+          <button className="reset-filters" onClick={resetFilters}>
+            Reset Filters
+          </button>
+        </div>
       </section>
     </div>
   );
