@@ -23,6 +23,14 @@ app.use((req, res, next) => {
 app.get('/health', (req, res) => {
     res.status(200).json({ status: 'ok' });
   });
+
+  app.use(cors({
+    origin: [
+      'http://localhost:3000',  //Local React APP
+      'https://reelify-frontend.onrender.com' // Prod url for frontend
+    ],
+    credentials: true
+  }));
   
 // Helper function to build URL with filters
 const buildTMDBUrl = (baseUrl, req) => {
